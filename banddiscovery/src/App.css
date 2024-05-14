@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app{
+  width: auto;
+  align-items: center;
+  vertical-align: top;
+  display: flex;
+  flex-direction: column;
+}
