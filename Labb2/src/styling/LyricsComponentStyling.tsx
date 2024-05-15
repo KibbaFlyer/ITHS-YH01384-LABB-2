@@ -51,9 +51,9 @@ const InputContainer = styled.div`
 `;
 
 const LyricsContainer = styled.div`
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
-    color: white;
+    background: rgba(173, 216, 230);
+    box-shadow: 0 4px 16px 0 rgba(173, 216, 230, 0.9);
+    color: black;
     width: 50%;
     margin-right: 20px;
     margin-left: 20px;

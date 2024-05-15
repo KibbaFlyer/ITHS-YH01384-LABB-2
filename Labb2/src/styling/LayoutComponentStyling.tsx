@@ -28,12 +28,10 @@ const StyledLink = styled(NavLink)`
     padding: 20px;
     border-radius: 10px;
     color: white;
-    background: blueviolet;
+    background: lightblue;
     display:block;
-    width: 50px;
-    height: 50px;
     &.active {
-    background: darkviolet;
+    background: blueviolet;
   }
 `
 

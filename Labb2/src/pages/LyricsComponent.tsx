@@ -5,8 +5,8 @@ import fetchLyrics from "../api/lyrics";
 import { ComponentContainer, RowContainer, H2Comp, Input, Button, InputContainer, LyricsContainer } from '../styling/LyricsComponentStyling';
 
 const LyricsComponent: React.FC = () => {
-  const [artist, setArtist] = React.useState("");
-  const [title, setTitle] = React.useState("");
+  const [artist, setArtist] = React.useState("Ed Sheeran");
+  const [title, setTitle] = React.useState("Perfect");
   const [lyrics, setLyrics] = React.useState("");
   const [disabledButton, setDisabledButton] = React.useState(true);
 
@@ -46,11 +46,11 @@ const LyricsComponent: React.FC = () => {
         <RowContainer>
           <InputContainer>
             <H2Comp>Artist</H2Comp>
-            <Input content={artist} onChange={updateArtist} />
+            <Input value={artist} onChange={updateArtist}/>
           </InputContainer>
           <InputContainer>
             <H2Comp>Title</H2Comp>
-            <Input content={title} onChange={updateTitle} />
+            <Input value={title} onChange={updateTitle}/>
           </InputContainer>
         </RowContainer>
         <Button disabled={disabledButton} onClick={getLyrics}>
