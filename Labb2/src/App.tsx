@@ -1,17 +1,20 @@
-import './App.css'
-import LyricsComponent from './components/LyricsComponent'
+import { Routes, Route } from "react-router-dom";
+import LyricsComponent from './pages/LyricsComponent'
+import HomeComponent from './pages/HomeComponent';
+import LayoutComponent from './pages/LayoutComponent';
+import NoPageComponent from './pages/NoPageComponent';
 
 function App() {
 
   return (
     <>
-      <div className="app">
-        <div>
-          <h1>Lyrics Discovery</h1>
-          <p>Find the lyrics to your favorite song!</p>
-        </div>
-        <LyricsComponent />
-      </div>
+      <Routes>
+        <Route path="/" element={<LayoutComponent />}>
+          <Route index element={<HomeComponent />} />
+          <Route path="lyrics" element={<LyricsComponent />} />
+          <Route path="*" element={<NoPageComponent />} />
+        </Route>
+      </Routes>
     </>
   )
 }

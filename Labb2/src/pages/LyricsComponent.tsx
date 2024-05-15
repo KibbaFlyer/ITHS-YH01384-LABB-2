@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import fetchLyrics from "../api/lyrics";
 
 // Styled Components
-import { Container, H2Comp, Input, Button, InputContainer, LyricsContainer } from '../styling/LyricsComponentStyling';
+import { ComponentContainer, RowContainer, H2Comp, Input, Button, InputContainer, LyricsContainer } from '../styling/LyricsComponentStyling';
 
-const LyricsComponent = () => {
+const LyricsComponent: React.FC = () => {
   const [artist, setArtist] = React.useState("");
   const [title, setTitle] = React.useState("");
   const [lyrics, setLyrics] = React.useState("");
@@ -42,29 +42,29 @@ const LyricsComponent = () => {
 
   return (
     <>
-      <Container>
-        <InputContainer>
-          <H2Comp>Artist</H2Comp>
-          <Input content={artist} onChange={updateArtist} />
-        </InputContainer>
-        <InputContainer>
-          <H2Comp>Title</H2Comp>
-          <Input content={title} onChange={updateTitle} />
-        </InputContainer>
-      </Container>
-      <div>
+      <ComponentContainer>
+        <RowContainer>
+          <InputContainer>
+            <H2Comp>Artist</H2Comp>
+            <Input content={artist} onChange={updateArtist} />
+          </InputContainer>
+          <InputContainer>
+            <H2Comp>Title</H2Comp>
+            <Input content={title} onChange={updateTitle} />
+          </InputContainer>
+        </RowContainer>
         <Button disabled={disabledButton} onClick={getLyrics}>
           Get Lyrics
         </Button>
-      </div>
-      <LyricsContainer>
-        <h1>Lyrics</h1>
-        <div>
-          {lyrics.split("\n").map((line, index) => {
-            return <p key={index}>{line}</p>;
-          })}
-        </div>
-      </LyricsContainer>
+        <LyricsContainer>
+          <H2Comp>Lyrics</H2Comp>
+          <div>
+            {lyrics.split("\n").map((line, index) => {
+              return <p key={index}>{line}</p>;
+            })}
+          </div>
+        </LyricsContainer>
+      </ComponentContainer>
     </>
   );
 };
