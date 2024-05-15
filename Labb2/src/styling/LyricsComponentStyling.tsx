@@ -1,51 +1,54 @@
-.container {
+// Styled Components
+import styled from 'styled-components';
+
+const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
   margin: 20px;
-}
+`;
 
-h2 {
+const H2Comp = styled.h2`
   margin: 10px;
-}
+`;
 
-input {
+const Input = styled.input`
   font-size: 15px;
   margin: 10px;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid black;
-}
+`;
 
-button {
+const Button = styled.button`
   box-shadow: 0 0 16px 0 blueviolet;
   border-radius: 10px;
-}
 
-button:not(:disabled):hover {
+  &:not(:disabled):hover {
     border-color: #646cff;
-}
+  }
 
-button:disabled {
+  &:disabled {
     cursor: not-allowed;
     box-shadow: none;
-}
+  }
+`;
 
-.inputContainer {
-  margin: 10px;
+const InputContainer = styled.div`
   background: blueviolet;
   box-shadow: 0 0 16px 0 blueviolet;
   border-radius: 10px;
-}
+`;
 
-.lyricsContainer {
+const LyricsContainer = styled.div`
   background: rgba(0, 0, 0, 0.2);
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
   color: white;
   margin: 20px;
-  padding: 10px;
   border-radius: 10px;
   width: 100%;
-}
+`;
+
+export { Container, H2Comp, Input, Button, InputContainer, LyricsContainer }

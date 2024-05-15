@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
-import styles from "./LyricsComponent.module.css";
-import lyricsAPI from "../api/lyrics";
+import fetchLyrics from "../api/lyrics";
+
+// Styled Components
+import { Container, H2Comp, Input, Button, InputContainer, LyricsContainer } from '../styling/LyricsComponentStyling';
 
 const LyricsComponent = () => {
   const [artist, setArtist] = React.useState("");
@@ -8,17 +10,17 @@ const LyricsComponent = () => {
   const [lyrics, setLyrics] = React.useState("");
   const [disabledButton, setDisabledButton] = React.useState(true);
 
-  function updateTitle(event) {
+  function updateTitle(event: React.ChangeEvent<HTMLInputElement>) {
     setTitle(event.target.value);
   }
 
-  function updateArtist(event) {
+  function updateArtist(event: React.ChangeEvent<HTMLInputElement>) {
     setArtist(event.target.value);
   }
 
   const getLyrics = async () => {
     setLyrics("");
-    const lyrics = await lyricsAPI(artist, title);
+    const lyrics = await fetchLyrics(artist, title);
     if (lyrics.error) {
       setLyrics("Lyrics not found");
       return;
@@ -40,29 +42,29 @@ const LyricsComponent = () => {
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.inputContainer}>
-          <h2>Artist</h2>
-          <input content={artist} onChange={updateArtist} />
-        </div>
-        <div className={styles.inputContainer}>
-          <h2>Title</h2>
-          <input content={title} onChange={updateTitle} />
-        </div>
-      </div>
+      <Container>
+        <InputContainer>
+          <H2Comp>Artist</H2Comp>
+          <Input content={artist} onChange={updateArtist} />
+        </InputContainer>
+        <InputContainer>
+          <H2Comp>Title</H2Comp>
+          <Input content={title} onChange={updateTitle} />
+        </InputContainer>
+      </Container>
       <div>
-        <button disabled={disabledButton} onClick={getLyrics}>
+        <Button disabled={disabledButton} onClick={getLyrics}>
           Get Lyrics
-        </button>
+        </Button>
       </div>
-      <div className={styles.lyricsContainer}>
+      <LyricsContainer>
         <h1>Lyrics</h1>
         <div>
           {lyrics.split("\n").map((line, index) => {
             return <p key={index}>{line}</p>;
           })}
         </div>
-      </div>
+      </LyricsContainer>
     </>
   );
 };

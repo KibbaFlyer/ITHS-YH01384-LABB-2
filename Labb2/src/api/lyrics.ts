@@ -1,4 +1,4 @@
-const fetchLyrics = async (artist, title) => {
+const fetchLyrics = async (artist: string, title: string) => {
   try {
     const response = await fetch(
       `https://api.lyrics.ovh/v1/${artist}/${title}`
