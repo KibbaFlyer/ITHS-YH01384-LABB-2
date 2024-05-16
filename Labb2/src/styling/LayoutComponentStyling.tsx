@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 
 const Navbar = styled.nav`
-    position: absolute;
+    position: fixed;
     top: 0;
+    width: 100%;
     padding-left: 20px;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
 `;
@@ -28,10 +30,10 @@ const StyledLink = styled(NavLink)`
     padding: 20px;
     border-radius: 10px;
     color: white;
-    background: lightblue;
+    background: blueviolet;
     display:block;
     &.active {
-    background: blueviolet;
+    background: lightblue;
   }
 `
 

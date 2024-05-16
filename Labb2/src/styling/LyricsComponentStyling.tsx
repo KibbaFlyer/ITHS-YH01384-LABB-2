@@ -9,6 +9,7 @@ const ComponentContainer = styled.div`
     padding-top: 100px;
     gap: 20px;
     width: 100vw;
+    z-index: 10;
 `;
 
 const RowContainer = styled.div`

@@ -1,35 +1,17 @@
-.hidden {
-  animation-name: slideOut;
-  animation-duration: 1s;
-}
-
 .show {
-  animation-name: slideIn;
-  animation-duration: 1s;
+  animation-name: bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
 
-.parallax {
-  transform: translateY(200px);
-}
-
-@keyframes slideOut {
+@keyframes bounce {
   0% {
-    transform: translateX(0%);
-    opacity: 1;
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(50%);
   }
   100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
+    transform: translateY(0%);
   }
 }
