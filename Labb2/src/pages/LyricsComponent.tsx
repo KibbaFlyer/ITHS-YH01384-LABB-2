@@ -41,7 +41,7 @@ const LyricsComponent: React.FC = () => {
   }, [artist, title]);
 
   return (
-    <>
+    <div>
       <ComponentContainer>
         <RowContainer>
           <InputContainer>
@@ -65,7 +65,7 @@ const LyricsComponent: React.FC = () => {
           </div>
         </LyricsContainer>
       </ComponentContainer>
-    </>
+    </div>
   );
 };
 

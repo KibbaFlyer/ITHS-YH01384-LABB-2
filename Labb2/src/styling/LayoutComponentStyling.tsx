@@ -4,13 +4,21 @@ import styled from 'styled-components';
 
 
 const Navbar = styled.nav`
-    position: fixed;
+    position: relative;
     top: 0;
-    width: 100%;
+    left: 0;
+    height: 100px;
+    width: auto;
     padding-left: 20px;
-    z-index: 1000;
     display: flex;
     flex-direction: row;
+    background-color: white;
+    z-index: 1;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 100%
+    );
 `;
 
 
@@ -27,14 +35,16 @@ const Li = styled.li`
 
 const StyledLink = styled(NavLink)`
     text-decoration: none;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    color: white;
-    background: blueviolet;
+    color: black;
+    background: transparent;
     display:block;
+    
     &.active {
-    background: lightblue;
-  }
+        background: #a466de;
+        color: white;
+    }
 `
 
 

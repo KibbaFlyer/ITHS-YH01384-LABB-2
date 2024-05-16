@@ -1,8 +1,8 @@
 import React from "react";
-import arrowPic from '../assets/icons8-down-arrow-100.png'
+import arrowPic from '../assets/icons8-down-arrow-100-2.png'
 
 // Styled Components
-import { H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg } from '../styling/HomeComponentStyling'
+import { Div, H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg } from '../styling/HomeComponentStyling'
 
 // CSS
 import animations from '../styling/Animations.module.css'
@@ -10,14 +10,14 @@ import animations from '../styling/Animations.module.css'
 const HomeComponent: React.FC = () => {
 
     return (
-        <div>
+        <Div>
             <StyledParallax
-                pages={3}
+                pages={2}
             >
                 <StyledParallaxBackgroundLayer
                     offset={0}
                     speed={1}
-                    factor={6}
+                    factor={4}
                 >
                 </StyledParallaxBackgroundLayer>
                 <StyledParallaxLayer
@@ -30,23 +30,23 @@ const HomeComponent: React.FC = () => {
                     offset={0.3}
                     speed={1}
                 >
-                    <img className={animations.img} src={arrowPic} />
+                    <img className={`${animations.show} ${animations.img}`} src={arrowPic} />
                 </StyledParallaxLayer>
                 <StyledParallaxLayer
-                    offset={1}
+                    offset={0.9}
                     speed={2}
                 >
                     <H2>This is a small little submission for a React course at ITHS</H2>
                 </StyledParallaxLayer>
                 <StyledParallaxLayer
-                    offset={2}
+                    offset={1}
                     speed={2}
                 >
                     <StyledImg className={`${animations.show} ${animations.img}`} src={arrowPic}/>
                     <H2>I have connected some external APIs, please have a look at the different tabs in the top</H2>
                 </StyledParallaxLayer>
             </StyledParallax>
-        </div>
+        </Div>
     );
 
 };

@@ -21,6 +21,7 @@ const RowContainer = styled.div`
 `;
 
 const H2Comp = styled.h2`
+    color: white;
     margin: 10px;
 `;
 
@@ -30,11 +31,15 @@ const Input = styled.input`
     padding: 5px;
     border-radius: 5px;
     border: 1px solid black;
+    background-color: white;
+    color: black;
 `;
 
 const Button = styled.button`
-    box-shadow: 0 0 16px 0 blueviolet;
+    box-shadow: 0 0 4px 0 blueviolet;
     border-radius: 10px;
+    background: blueviolet;
+    color: white;
     &:not(:disabled):hover {
         border-color: #646cff;
     }
@@ -47,18 +52,19 @@ const Button = styled.button`
 
 const InputContainer = styled.div`
     background: blueviolet;
-    box-shadow: 0 0 16px 0 blueviolet;
+    box-shadow: 0 0 4px 0 blueviolet;
     border-radius: 10px;
 `;
 
 const LyricsContainer = styled.div`
-    background: rgba(173, 216, 230);
+    background: #242424BB;
     box-shadow: 0 4px 16px 0 rgba(173, 216, 230, 0.9);
-    color: black;
+    color: white;
     width: 50%;
     margin-right: 20px;
     margin-left: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
 `;
 
 

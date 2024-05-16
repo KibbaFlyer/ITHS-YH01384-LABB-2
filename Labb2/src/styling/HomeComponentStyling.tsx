@@ -2,12 +2,16 @@
 import styled from 'styled-components';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
+const Div = styled.div`
+    height: 100%;
+`
+
 const H1 = styled.h1`
     display: flex;
     justify-content: center;
     width: 100vw;
     height: auto;
-    color: lightblue;
+    color: greenyellow;
 `
 
 const H2 = styled.h2`
@@ -15,11 +19,13 @@ const H2 = styled.h2`
     justify-content: center;
     width: 100vw;
     height: auto;
-    color: lightblue;
+    color: greenyellow;
 `
 
 const StyledParallax = styled(Parallax)`
     z-index: 0;
+    top:0;
+    height: 100%;
 `
 
 const StyledParallaxLayer = styled(ParallaxLayer)`
@@ -43,4 +49,4 @@ const StyledImg = styled.img`
 `
 
 
-export { H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg }
+export { Div, H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg }

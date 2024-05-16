@@ -4,7 +4,7 @@
   font-weight: 400;
   text-align: center;
   color-scheme: light dark;
-  color: lightblue;
+  color: white;
   background-color: #242424;
 
   font-synthesis: none;
@@ -13,15 +13,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -45,15 +45,28 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+:root {
+  color: #213547;
+  background-color: #ffffff;
+}
+
+a:hover {
+  animation-name: easeIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+button {
+  background-color: #f9f9f9;
+}
+@keyframes easeIn {
+  0% {
+    transform: scale(1);
   }
-  a:hover {
-    color: white;
+  50% {
+    transform: scale(1.1);
   }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    transform: scale(1);
   }
 }
