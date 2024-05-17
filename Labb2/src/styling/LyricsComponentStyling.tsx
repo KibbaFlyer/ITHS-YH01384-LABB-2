@@ -5,11 +5,14 @@ const ComponentContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 100px;
+    justify-content: top;
     gap: 20px;
     width: 100vw;
-    z-index: 10;
+    height: 100%;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    top: 0;
+    height: 100vh;
 `;
 
 const RowContainer = styled.div`
@@ -21,7 +24,7 @@ const RowContainer = styled.div`
 `;
 
 const H2Comp = styled.h2`
-    color: white;
+    color: var(--color-secondary);
     margin: 10px;
 `;
 
@@ -29,7 +32,7 @@ const Input = styled.input`
     font-size: 15px;
     margin: 10px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid black;
     background-color: white;
     color: black;
@@ -38,8 +41,9 @@ const Input = styled.input`
 const Button = styled.button`
     box-shadow: 0 0 4px 0 blueviolet;
     border-radius: 10px;
-    background: blueviolet;
     color: white;
+    background: var(--color-primary);
+
     &:not(:disabled):hover {
         border-color: #646cff;
     }
@@ -47,20 +51,17 @@ const Button = styled.button`
     &:disabled {
         cursor: not-allowed;
         box-shadow: none;
+        background-color: gray;
     }
 `;
 
 const InputContainer = styled.div`
-    background: blueviolet;
-    box-shadow: 0 0 4px 0 blueviolet;
     border-radius: 10px;
 `;
 
 const LyricsContainer = styled.div`
-    background: #242424BB;
-    box-shadow: 0 4px 16px 0 rgba(173, 216, 230, 0.9);
     color: white;
-    width: 50%;
+    width: 100%;
     margin-right: 20px;
     margin-left: 20px;
     border-radius: 10px;

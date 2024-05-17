@@ -15,3 +15,21 @@
     transform: translateY(0%);
   }
 }
+
+.pulsate:hover {
+  animation-name: easeIn;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes easeIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

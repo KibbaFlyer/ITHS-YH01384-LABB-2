@@ -11,7 +11,7 @@ const H1 = styled.h1`
     justify-content: center;
     width: 100vw;
     height: auto;
-    color: greenyellow;
+    color: var(--color-secondary);
 `
 
 const H2 = styled.h2`
@@ -19,7 +19,7 @@ const H2 = styled.h2`
     justify-content: center;
     width: 100vw;
     height: auto;
-    color: greenyellow;
+    color: var(--color-secondary);
 `
 
 const StyledParallax = styled(Parallax)`
@@ -36,9 +36,9 @@ const StyledParallaxLayer = styled(ParallaxLayer)`
 `
 
 const StyledParallaxBackgroundLayer = styled(ParallaxLayer)`
-    background-image: linear-gradient(blueviolet, rgb(173, 216, 230));
+    background-image: linear-gradient(var(--color-primary), rgb(173, 216, 230));
     background-size: 100%;
-    opacity: 0.5;
+    opacity: 0.8;
 `
 
 const StyledImg = styled.img`
@@ -49,4 +49,5 @@ const StyledImg = styled.img`
 `
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { Div, H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg }

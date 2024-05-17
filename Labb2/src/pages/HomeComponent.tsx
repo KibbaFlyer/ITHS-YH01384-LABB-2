@@ -1,8 +1,8 @@
 import React from "react";
-import arrowPic from '../assets/icons8-down-arrow-100-2.png'
+import arrowPic from '../../assets/icons8-down-arrow-100-2.png'
 
 // Styled Components
-import { Div, H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg } from '../styling/HomeComponentStyling'
+import { Div, H1, H2, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer, StyledImg } from '../styling/ParallaxComponentStyling'
 
 // CSS
 import animations from '../styling/Animations.module.css'
@@ -28,7 +28,7 @@ const HomeComponent: React.FC = () => {
                 </StyledParallaxLayer>
                 <StyledParallaxLayer
                     offset={0.3}
-                    speed={1}
+                    speed={1.5}
                 >
                     <img className={`${animations.show} ${animations.img}`} src={arrowPic} />
                 </StyledParallaxLayer>

@@ -15,6 +15,12 @@ const LayoutComponent: React.FC = () => {
           <Li>
             <StyledLink to="/lyrics">Lyrics</StyledLink>
           </Li>
+          <Li>
+            <StyledLink to="/crypto">Crypto</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/bored">Bored?</StyledLink>
+          </Li>
         </Ul>
       </Navbar>
 
