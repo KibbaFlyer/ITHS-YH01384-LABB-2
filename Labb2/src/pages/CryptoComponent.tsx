@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import fetchBitcoinPrice from "../api/coinbase";
+import { Div, H1, StyledParallax, StyledParallaxLayer, StyledParallaxBackgroundLayer } from '../styling/ParallaxComponentStyling'
 
 interface currency {
     code: string;
@@ -35,7 +36,7 @@ const CryptoComponent = () => {
     const getBitcoinPrice = async () => {
         const price: btcPrice = await fetchBitcoinPrice();
         setPrice(price);
-        setRender(new Date().toLocaleDateString('en-us', { day:"numeric", year:"numeric", month:"short", hour:"2-digit", minute:"2-digit", second:"2-digit", hourCycle:"h24"}) )
+        setRender(new Date().toLocaleDateString('en-us', { day: "numeric", year: "numeric", month: "short", hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h24" }))
         return;
     };
 
@@ -44,21 +45,37 @@ const CryptoComponent = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Crypto</h1>
-            <div>
-                {price &&
+        <Div>
+            <StyledParallax
+                pages={1}
+            >
+                <StyledParallaxBackgroundLayer
+                    offset={0}
+                    speed={1}
+                >
+                </StyledParallaxBackgroundLayer>
+                <StyledParallaxLayer
+                    offset={0}
+                    speed={1}
+                >
+                    <H1>Crypto</H1>
                     <div>
-                        <p>{price.disclaimer}</p>
-                        <p>Updated: {price.time.updated}</p>
-                        <p>Last try: {render}</p>
-                        <p>EUR 🇪🇺: {price.bpi.EUR.rate_float.toLocaleString()}</p>
-                        <p>USD 🇺🇸: {price.bpi.USD.rate_float.toLocaleString()}</p>
-                        <p>GBP 🇬🇧: {price.bpi.GBP.rate_float.toLocaleString()}</p>
+                        {price &&
+                            <div>
+                                <p>{price.disclaimer}</p>
+                                <p>Updated: {price.time.updated}</p>
+                                <p>Last try: {render}</p>
+                                <p>EUR 🇪🇺: {price.bpi.EUR.rate_float.toLocaleString()}</p>
+                                <p>USD 🇺🇸: {price.bpi.USD.rate_float.toLocaleString()}</p>
+                                <p>GBP 🇬🇧: {price.bpi.GBP.rate_float.toLocaleString()}</p>
+                            </div>
+                        }
+                        {!price && `No data was found`}
                     </div>
-                }
-            </div>
-        </div>
+                </StyledParallaxLayer>
+            </StyledParallax>
+
+        </Div>
     )
 }
 

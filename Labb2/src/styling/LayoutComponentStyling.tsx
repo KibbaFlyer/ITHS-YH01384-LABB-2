@@ -42,8 +42,8 @@ const StyledLink = styled(NavLink)`
     display:block;
     
     &.active {
-        background: var(--color-primary);
-        color: white;
+        background: white;
+        color: black;
     }
 `
 

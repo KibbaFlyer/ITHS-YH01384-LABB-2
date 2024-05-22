@@ -25,7 +25,8 @@ const BoredComponent = () => {
 
     return (
         <div>
-            <h1>Bored</h1>
+            <h1>You've come to the right place!</h1>
+            <h2>Here are some ideas for what to do</h2>
             {bored &&
                 <div>
                     <p>Activity: {bored.activity}</p>
@@ -39,6 +40,7 @@ const BoredComponent = () => {
                     </Button>
                 </div>
             }
+            {!bored && `No data was found`}
         </div>
     )
 }

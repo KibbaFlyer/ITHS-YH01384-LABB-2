@@ -21,6 +21,9 @@ const LayoutComponent: React.FC = () => {
           <Li>
             <StyledLink to="/bored">Bored?</StyledLink>
           </Li>
+          <Li>
+            <StyledLink to="/cat">Cat!</StyledLink>
+          </Li>
         </Ul>
       </Navbar>
 
